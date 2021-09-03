@@ -1,9 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
+import "../styles/Educational.css";
 
-class Educational extends Component {
-  render() {
-    return <div>Educational</div>;
-  }
+const Educational = (props) => {
+  const {educations} = props
+  return (
+    <div>
+      Educational
+      {educations.map((education) => {
+        return (
+          <div key={education.id}>
+            <p>{education.title}</p>
+            <p>{education.schoolName}</p>
+          </div>
+        );
+      })}
+    </div>
+    );
+  
 }
 
 export default Educational;

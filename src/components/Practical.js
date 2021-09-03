@@ -1,9 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
+import "../styles/Practical.css";
 
-class Practical extends Component {
-  render() {
-    return <div>Practical</div>;
-  }
+const Practical = (props) => {
+  const { experiences } = props;
+  return (
+    <div>
+      Practical
+      {experiences.map((experience) => {
+        return (
+          <div key={experience.id}>
+            <p>{experience.title}</p>
+            <p>{experience.company}</p>
+          </div>
+        );
+      })}
+    </div>
+    );
+  
 }
 
 export default Practical;
